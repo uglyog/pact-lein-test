@@ -1,0 +1,88 @@
+{
+  "consumer": {
+    "name": "graphql"
+  },
+  "provider": {
+    "name": "sod"
+  },
+  "interactions": [
+    {
+      "description": "POST request for search on demand results",
+      "request": {
+        "method": "POST",
+        "path": "/sod/jsonrpc",
+        "headers": {
+          "Accept": "application/json"
+        },
+        "body": {
+          "jsonrpc": "2.0",
+          "method": "sod-v3.search",
+          "params": [
+            "jamiro",
+            [
+              "AR",
+              "TR"
+            ],
+            {
+              "listenerId": "399"
+            },
+            0,
+            20,
+            false
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+        },
+        "body": {
+          "jsonrpc": "2.0",
+          "id": "null",
+          "result": {
+            "annotations": {
+            },
+            "results": [
+              "AR:1483",
+              "AR:431482",
+              "TR:5761576",
+              "AR:4553512",
+              "AR:5276999",
+              "AR:1291911",
+              "AR:3183539",
+              "AR:2587975",
+              "AR:4804250",
+              "AR:4099386",
+              "TR:13374694",
+              "AR:683520",
+              "TR:5164843",
+              "AR:3585588",
+              "AR:1311776",
+              "AR:220003",
+              "TR:13647594",
+              "TR:5973496",
+              "AR:853471",
+              "AR:2076170"
+            ]
+          }
+        },
+        "matchingRules": {
+          "$.body.result": {
+            "match": "type"
+          },
+          "$.body.result.annotations": {
+            "match": "type"
+          },
+          "$.body.result.results": {
+            "match": "type"
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}

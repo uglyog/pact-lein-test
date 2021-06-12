@@ -33,7 +33,7 @@
                   ; Again, you can define as many consumers for each provider as you need, but each must have a unique name
                   :consumer1 {
                     ; pact file can be either a path or an URL
-                    :pact-source "file:test/sample-pact.json"
+                    :pact-source "http://localhost:9292/pacts/provider/sod/consumer/graphql/version/1.0.3"
                   }
               }
           }
